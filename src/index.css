@@ -1,0 +1,150 @@
+/* ==================== Global Theme Variables ==================== */
+:root {
+  /* Carrefour Brand Colors */
+  --carrefour-red: #E4002B;
+  --carrefour-blue: #004B87;
+  --carrefour-red-light: #FF4D5A;
+  --carrefour-blue-light: #0066B3;
+  
+  /* Light Theme */
+  --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --shadow-primary: rgba(0, 0, 0, 0.08);
+  --shadow-secondary: rgba(0, 0, 0, 0.04);
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme - Carrefour Inspired */
+  --bg-primary: linear-gradient(135deg, #0A0E27 0%, #0F1329 100%);
+  --bg-secondary: #151B3C;
+  --bg-tertiary: #0A0E27;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B8C8;
+  --text-muted: #7A8295;
+  --border-primary: #2A3150;
+  --border-secondary: #1F2847;
+  --shadow-primary: rgba(0, 0, 0, 0.3);
+  --shadow-secondary: rgba(0, 0, 0, 0.15);
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --error: #F87171;
+}
+
+/* ==================== Global Styles ==================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ==================== Scrollbar Styling ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--carrefour-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--carrefour-red);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--carrefour-red);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--carrefour-blue);
+}
+
+/* ==================== Selection Styling ==================== */
+::selection {
+  background: rgba(0, 75, 135, 0.2);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] ::selection {
+  background: rgba(228, 0, 43, 0.2);
+}
+
+/* ==================== Focus Styles ==================== */
+*:focus {
+  outline: 2px solid var(--carrefour-blue);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] *:focus {
+  outline-color: var(--carrefour-red);
+}
+
+/* ==================== Button Base Styles ==================== */
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:focus {
+  outline: 2px solid var(--carrefour-blue);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] button:focus {
+  outline-color: var(--carrefour-red);
+}
+
+/* ==================== Input Base Styles ==================== */
+input, textarea, select {
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--carrefour-blue);
+  box-shadow: 0 0 0 3px rgba(0, 75, 135, 0.1);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: var(--carrefour-red);
+  box-shadow: 0 0 0 3px rgba(228, 0, 43, 0.1);
+}
