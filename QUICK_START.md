@@ -37,8 +37,8 @@ npm start
 
 ### Arquivo .env (Backend)
 ```
-JIRA_DOMAIN=c4br.atlassian.net
-JIRA_EMAIL=seu@email.com
+JIRA_DOMAIN=seu_dominio_jira.atlassian.net
+JIRA_EMAIL=seu.email@exemplo.com
 JIRA_TOKEN=seu_token_jira
 PORT=5001
 ```
@@ -66,7 +66,7 @@ PORT=5001
 ### "Erro ao carregar PRs"
 - [ ] Verifique conexão de internet
 - [ ] Confirme token JIRA válido
-- [ ] Acessar JIRA diretamente: https://c4br.atlassian.net/
+- [ ] Acessar JIRA diretamente: https://seu_dominio_jira.atlassian.net/
 - [ ] Cheque permissões do usuário
 
 ### CORS Error
@@ -117,9 +117,9 @@ Acesse de outro PC: `http://seu-ip:3000`
 
 | Item | Valor | Onde |
 |------|-------|------|
-| JIRA Domain | c4br.atlassian.net | jiraService.js |
-| JIRA Email | wagner_cardoso_2@carrefour.com | jiraService.js |
-| JIRA Token | ATATT3x... | jiraService.js ou .env |
+| JIRA Domain | seu_dominio_jira.atlassian.net | .env ou backend |
+| JIRA Email | seu.email@exemplo.com | .env ou backend |
+| JIRA Token | seu_token_jira | .env ou backend |
 | Google Client ID | seu_id | .env.local |
 
 ## 📚 Documentação Completa

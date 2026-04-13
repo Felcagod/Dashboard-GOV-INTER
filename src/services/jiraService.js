@@ -1,9 +1,5 @@
-// JIRA Configuration
-const JIRA_CONFIG = {
-  DOMAIN: "c4br.atlassian.net",
-  EMAIL: "wagner_cardoso_2@carrefour.com",
-  TOKEN: "ATATT3xFfGF0wRUdVVh3Ih9WQnerAiSId7TbJn2T1hAIz98g-viYYi2IHekoKSasTwsNS_5J9wLMt17e-Oz8QuYrN5DfPdgWW0JAuv6VMP4xV_UKukRaBc_rHbObuJnJOMES-KMP3XF-o77qCl354OZCXg8tFF_XbS54wM9RkFkljLGgHq2Esfw=941426E2"
-};
+// As credenciais JIRA devem ser gerenciadas no backend.
+// Não armazene domain, email ou token diretamente no código fonte público.
 
 // URL do backend proxy (configure conforme necessário)
 // Prioriza REACT_APP_API_URL. Em desenvolvimento, usa localhost:5001 como fallback.

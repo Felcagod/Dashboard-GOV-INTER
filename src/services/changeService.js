@@ -1,6 +1,7 @@
-// JIRA Configuration
+// A configuração JIRA deve ser fornecida pelo backend.
+// Não armazene o domínio JIRA diretamente no código público.
 const JIRA_CONFIG = {
-  DOMAIN: "c4br.atlassian.net"
+  DOMAIN: process.env.REACT_APP_JIRA_DOMAIN || ''
 };
 
 // URL do backend proxy
@@ -68,7 +69,7 @@ const getMockData = () => {
       fields: {
         summary: 'Atualização do sistema de autenticação',
         status: { name: 'Aguardando Comitê' },
-        reporter: { displayName: 'Wagner Silva' },
+        reporter: { displayName: 'Usuário de Exemplo' },
         description: 'Sistema de autenticação precisa ser atualizado para suportar OAuth 2.0',
         customfield_10250: {
           type: "doc",

@@ -81,7 +81,7 @@ const Login = ({ onLoginSuccess }) => {
 
     const code = startPasswordReset(resetUsername);
     if (!code) {
-      setErrors({ resetUsername: 'Usuário não encontrado. Use Wagner, Enrique, Kelvyn ou Roberta.' });
+      setErrors({ resetUsername: 'Usuário não encontrado. Use um nome de usuário válido.' });
       return;
     }
 
@@ -144,10 +144,10 @@ const Login = ({ onLoginSuccess }) => {
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-header">
           <div className="logo-wrap">
-            <img src="/carrefour-logo-new.svg" alt="Carrefour" className="carrefour-logo" />
+            <img src="/carrefour-logo-new.svg" alt="Logo do projeto" className="carrefour-logo" />
           </div>
-          <h1>Portal Carrefour</h1>
-          <p>Autorização e Governança Corporativa</p>
+          <h1>Dashboard Demo</h1>
+          <p>Autenticação segura</p>
         </div>
 
         {mode === 'login' && (
@@ -161,7 +161,7 @@ const Login = ({ onLoginSuccess }) => {
                 id="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="Wagner"
+                placeholder="demo1"
                 className={errors.username ? 'input-error' : ''}
               />
               {errors.username && <span className="error-message">{errors.username}</span>}
@@ -235,7 +235,7 @@ const Login = ({ onLoginSuccess }) => {
                   id="resetUsername"
                   value={resetUsername}
                   onChange={(e) => setResetUsername(e.target.value)}
-                  placeholder="Wagner"
+                  placeholder="demo1"
                   className={errors.resetUsername ? 'input-error' : ''}
                 />
                 {errors.resetUsername && <span className="error-message">{errors.resetUsername}</span>}
@@ -310,11 +310,6 @@ const Login = ({ onLoginSuccess }) => {
         {statusMessage && mode === 'login' && <div className="form-message success">{statusMessage}</div>}
       </form>
 
-      {/* <div className="demo-credentials">
-        <p><strong>Usuários permitidos:</strong></p>
-        <p>Wagner · Enrique · Kelvyn · Roberta</p>
-        <p><strong>Senha padrão:</strong> govc4*</p>
-      </div> */}
     </div>
   );
 };

@@ -8,13 +8,13 @@ O Dashboard integra-se diretamente com sua instância JIRA para monitorar PRs (P
 
 ### 1. Credenciais JIRA
 
-O arquivo `src/services/jiraService.js` contém suas credenciais de acesso:
+As credenciais JIRA devem ser definidas em variáveis de ambiente no backend. Não armazene valores sensíveis diretamente no código público.
 
 ```javascript
 const JIRA_CONFIG = {
-  DOMAIN: "c4br.atlassian.net",
-  EMAIL: "wagner_cardoso_2@carrefour.com",
-  TOKEN: "ATATT3xFfGF0wRUdVVh3Ih9WQnerAiSId7TbJn2T1hAIz98g-viYYi2IHekoKSasTwsNS_5J9wLMt17e-Oz8QuYrN5DfPdgWW0JAuv6VMP4xV_UKukRaBc_rHbObuJnJOMES-KMP3XF-o77qCl354OZCXg8tFF_XbS54wM9RkFkljLGgHq2Esfw=941426E2"
+  DOMAIN: process.env.JIRA_DOMAIN,
+  EMAIL: process.env.JIRA_EMAIL,
+  TOKEN: process.env.JIRA_TOKEN
 };
 ```
 

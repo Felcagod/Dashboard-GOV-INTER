@@ -25,30 +25,29 @@ app.use(cors());
 app.use(express.json({ limit: '100mb' }));
 
 // ==================== CONFIGURAÇÃO ====================
-const DEFAULT_JIRA_TOKEN = "ATATT3xFfGF0wRUdVVh3Ih9WQnerAiSId7TbJn2T1hAIz98g-viYYi2IHekoKSasTwsNS_5J9wLMt17e-Oz8QuYrN5DfPdgWW0JAuv6VMP4xV_UKukRaBc_rHbObuJnJOMES-KMP3XF-o77qCl354OZCXg8tFF_XbS54wM9RkFkljLGgHq2Esfw=941426E2";
 const parsedJiraTokens = (process.env.JIRA_TOKENS || '')
   .split(',')
   .map(token => token.trim())
   .filter(Boolean);
 const JIRA_CONFIG = {
-  DOMAIN: process.env.JIRA_DOMAIN || "c4br.atlassian.net",
-  EMAIL: process.env.JIRA_EMAIL || "wagner_cardoso_2@carrefour.com",
+  DOMAIN: process.env.JIRA_DOMAIN || '',
+  EMAIL: process.env.JIRA_EMAIL || '',
   TOKENS: [
     ...parsedJiraTokens,
     process.env.JIRA_TOKEN,
-    process.env.JIRA_TOKEN_FALLBACK,
-    DEFAULT_JIRA_TOKEN
+    process.env.JIRA_TOKEN_FALLBACK
   ].filter(Boolean)
 };
 
-console.log('JIRA config:', {
-  domain: JIRA_CONFIG.DOMAIN,
-  email: JIRA_CONFIG.EMAIL,
-  tokensLoaded: JIRA_CONFIG.TOKENS.length,
-  hasPrimaryToken: Boolean(process.env.JIRA_TOKEN),
-  hasFallbackToken: Boolean(process.env.JIRA_TOKEN_FALLBACK),
-  hasTokensList: Boolean(process.env.JIRA_TOKENS)
+console.log('JIRA proxy inicializado:', {
+  domainConfigured: Boolean(JIRA_CONFIG.DOMAIN),
+  emailConfigured: Boolean(JIRA_CONFIG.EMAIL),
+  tokensLoaded: JIRA_CONFIG.TOKENS.length
 });
+
+if (!JIRA_CONFIG.DOMAIN || !JIRA_CONFIG.EMAIL || JIRA_CONFIG.TOKENS.length === 0) {
+  console.warn('AVISO: verifique JIRA_DOMAIN, JIRA_EMAIL e JIRA_TOKEN no arquivo .env. Não deixe credenciais sensíveis no repositório.');
+}
 
 // ==================== AUTH ====================
 const getAuthHeader = (token) => {

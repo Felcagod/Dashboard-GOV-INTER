@@ -10,12 +10,16 @@ const url = require('url');
 
 // ==================== CONFIGURAÇÃO ====================
 const JIRA_CONFIG = {
-  DOMAIN: "c4br.atlassian.net",
-  EMAIL: "wagner_cardoso_2@carrefour.com",
-  TOKEN: "ATATT3xFfGF0wRUdVVh3Ih9WQnerAiSId7TbJn2T1hAIz98g-viYYi2IHekoKSasTwsNS_5J9wLMt17e-Oz8QuYrN5DfPdgWW0JAuv6VMP4xV_UKukRaBc_rHbObuJnJOMES-KMP3XF-o77qCl354OZCXg8tFF_XbS54wM9RkFkljLGgHq2Esfw=941426E2"
+  DOMAIN: process.env.JIRA_DOMAIN || '',
+  EMAIL: process.env.JIRA_EMAIL || '',
+  TOKEN: process.env.JIRA_TOKEN || ''
 };
 
 const PORT = process.env.PORT || 5000;
+
+if (!JIRA_CONFIG.DOMAIN || !JIRA_CONFIG.EMAIL || !JIRA_CONFIG.TOKEN) {
+  console.warn('AVISO: este backend simples precisa de JIRA_DOMAIN, JIRA_EMAIL e JIRA_TOKEN no ambiente.');
+}
 
 // ==================== AUTH ====================
 function getAuthHeader() {

@@ -3,25 +3,25 @@ import { fetchJiraChanges, processJiraChanges } from '../../services/changeServi
 import './ContactsTab.css';
 
 const CONTACT_OVERRIDES = {
-  'Wagner Silva': {
-    email: 'wagner.silva@carrefour.com',
+  'Usuario Exemplo 1': {
+    email: 'demo1@example.com',
     group: 'Governança de TI',
-    phone: '+55 11 99999-0001',
+    phone: '+55 11 90000-0001',
   },
-  'Enrique Santos': {
-    email: 'enrique.santos@carrefour.com',
+  'Usuario Exemplo 2': {
+    email: 'demo2@example.com',
     group: 'Operações de Change',
-    phone: '+55 11 99999-0002',
+    phone: '+55 11 90000-0002',
   },
-  'Kelvyn Costa': {
-    email: 'kelvyn.costa@carrefour.com',
+  'Usuario Exemplo 3': {
+    email: 'demo3@example.com',
     group: 'Infraestrutura e Deploy',
-    phone: '+55 11 99999-0003',
+    phone: '+55 11 90000-0003',
   },
-  'Roberta Almeida': {
-    email: 'roberta.almeida@carrefour.com',
+  'Usuario Exemplo 4': {
+    email: 'demo4@example.com',
     group: 'Suporte e Sustentação',
-    phone: '+55 11 99999-0004',
+    phone: '+55 11 90000-0004',
   },
 };
 
@@ -42,7 +42,7 @@ const buildEmail = (name) => {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '.')
     .replace(/(^\.|\.$)/g, '');
-  return `${slug}@carrefour.com`;
+  return `${slug}@example.com`;
 };
 
 const buildGroup = (name, changeType) => {
